@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<!-- 导入js资源 注意路径不要写错 -->
+<script src="./live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+//初始化小人物 需设置属性pluginRootPath: "live2dw/"指明资源跟路径
+L2Dwidget.init({
+  pluginRootPath: "live2dw/",//资源root路径
+  pluginJsPath: "lib/",//js相对root的路径
+  pluginModelPath: "assets/",//模型相对root的路径
+  tagMode: !1,
+  debug: !1,
+  model: {
+    scale: 2,
+    jsonPath: "live2dw/assets/asuna_33.model.json"
+  },
+  display: {//大小位置什么的自己慢慢调就是了
+    position: "left",//定位
+    width: 130,//宽度
+    height: 210,//高度
+    hOffset: 1040,//左右
+    vOffset: 0//上下
+  },
+  mobile: {
+    show: !1
+  },
+  log: !1
+});
+</script>
+
+<div id="landlord">
+  <div class="message" style="opacity:0"></div>
+  <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+</div>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+    var message_Path = 'https://6dduu6.github.io/live2d/' //message.js的目录（必须填写，否则无法加载交互的文字）
+    var home_Path = 'https://6dduu6.github.io/' //网站的根目录
+</script>
+<script type="text/javascript" src="live2d/js/live2d.js"></script>
+<script type="text/javascript" src="live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "https://6dduu6.github.io/live2d/model/pio/model.json"); //model.json和其模型等都需要放在服务器网站上
+</script>
+
+</body>
+</html>
